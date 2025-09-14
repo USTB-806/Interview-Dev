@@ -1,4 +1,4 @@
-## 数据类型与变量
+## 数据类型
 
 - Python 中内置的数据类型包括数字（int、float）、字符串（str）、布尔值（bool）、列表（list）、元组（tuple）、字典（dict）和集合（set）。
 
@@ -169,4 +169,17 @@ set 和 dict 类似，也是一组 key 的集合，但不存储 value。由于 k
   print(original)        # 输出: [1, 2, ['changed', 4]]
   print(shallow_copied) # 输出: [1, 2, ['changed', 4]] (嵌套对象被修改)
   print(deep_copied)    # 输出: [1, 2, [3, 4]] (嵌套对象未被修改)
+  ```
+### 如何在函数中修改全局变量
+- 使用 `global` 关键字声明变量为全局变量。
+
+  ```python
+  count = 0  # 全局变量
+
+  def increment():
+      global count  # 声明使用全局变量
+      count += 1
+
+  increment()
+  print(count)  # 输出: 1
   ```
